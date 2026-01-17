@@ -12,16 +12,35 @@
 <style>
     [x-cloak] { display: none !important; }
     .chat-bg {
-        background-image: 
-            repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0,0,0,.02) 35px, rgba(0,0,0,.02) 70px),
-            repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(0,0,0,.02) 35px, rgba(0,0,0,.02) 70px);
+        /* base color (light) */
+        background-color: #f5f9fc;
+
+        /* Layer 1: fine dotted texture (repeating radial) - gives a linen-like grain
+        Layer 2: soft diagonal sheen (repeating linear) - adds motion and depth */
+        background-image:
+            repeating-radial-gradient(circle at 0 0, rgba(6,120,160,0.06) 0px, rgba(6,120,160,0.06) 1px, transparent 1px, transparent 28px),
+            repeating-linear-gradient(135deg, transparent, transparent 28px, rgba(6,120,160,0.035) 28px, rgba(6,120,160,0.035) 70px);
+        
+        /* sizing aligns the dot grid and sheen rhythm */
+        background-size: 28px 28px, 140px 140px;
+        background-position: 0 0, 0 0;
+        background-repeat: repeat, repeat;
+        /* keep the texture steady while scrolling (optional, remove for mobile) */
+        background-attachment: fixed;
     }
-    
+
+    /* Dark theme variant */
     .dark .chat-bg {
-        /* background-color: #0b141a; */
-        background-image: 
-            repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px),
-            repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
+        background-color: #071226;
+
+        background-image:
+            repeating-radial-gradient(circle at 0 0, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 28px),
+            repeating-linear-gradient(135deg, transparent, transparent 28px, rgba(255,255,255,0.02) 28px, rgba(255,255,255,0.02) 70px);
+
+        background-size: 28px 28px, 140px 140px;
+        background-position: 0 0, 0 0;
+        background-repeat: repeat, repeat;
+        background-attachment: fixed;
     }
 
     .scrollbar-hidden::-webkit-scrollbar {
