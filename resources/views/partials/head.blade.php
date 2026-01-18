@@ -12,24 +12,19 @@
 <style>
     [x-cloak] { display: none !important; }
     .chat-bg {
-        /* base color (light) */
         background-color: #f5f9fc;
 
-        /* Layer 1: fine dotted texture (repeating radial) - gives a linen-like grain
-        Layer 2: soft diagonal sheen (repeating linear) - adds motion and depth */
         background-image:
             repeating-radial-gradient(circle at 0 0, rgba(6,120,160,0.06) 0px, rgba(6,120,160,0.06) 1px, transparent 1px, transparent 28px),
             repeating-linear-gradient(135deg, transparent, transparent 28px, rgba(6,120,160,0.035) 28px, rgba(6,120,160,0.035) 70px);
         
-        /* sizing aligns the dot grid and sheen rhythm */
+        
         background-size: 28px 28px, 140px 140px;
         background-position: 0 0, 0 0;
         background-repeat: repeat, repeat;
-        /* keep the texture steady while scrolling (optional, remove for mobile) */
         background-attachment: fixed;
     }
 
-    /* Dark theme variant */
     .dark .chat-bg {
         background-color: #071226;
 
